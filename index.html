@@ -3,109 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE ARCHITECTURE OF THE STEERSMAN | Forensic Audit</title>
+    <title>THE ARCHITECTURE OF THE STEERSMAN | Cumulative Manuscript</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #0d0d0d; --surface: #161616; --border: #333333;
             --text-main: #c4c4c4; --text-bright: #ffffff; --text-dim: #777777;
-            --accent: #ffffff; --header-font: 'Inter', sans-serif; --body-font: 'Crimson Pro', serif;
+            --header-font: 'Inter', sans-serif; --body-font: 'Crimson Pro', serif;
         }
         body { background-color: var(--bg); color: var(--text-main); font-family: var(--body-font); margin: 0; line-height: 1.7; font-size: 1.15rem; }
-        header { border-bottom: 1px solid var(--border); padding: 60px 20px; text-align: center; background-color: var(--surface); }
+        header { border-bottom: 1px solid var(--border); padding: 80px 20px; text-align: center; background-color: var(--surface); }
         h1 { font-family: var(--header-font); font-size: 2.2rem; font-weight: 700; margin: 0; text-transform: uppercase; letter-spacing: -1px; color: var(--text-bright); }
         .subtitle { font-family: var(--header-font); font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 5px; margin-top: 15px; }
         .container { max-width: 950px; margin: 0 auto; padding: 60px 20px; }
-        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 60px; font-family: var(--header-font); font-size: 0.7rem; }
-        .nav-item { border: 1px solid var(--border); padding: 10px; text-align: center; text-decoration: none; color: var(--text-dim); text-transform: uppercase; }
-        .nav-item:hover { border-color: var(--text-bright); color: var(--text-bright); }
-        section { margin-bottom: 100px; }
-        h2 { font-family: var(--header-font); font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; color: var(--text-bright); }
-        .metadata { font-family: var(--header-font); font-size: 0.7rem; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; border-left: 2px solid var(--border); padding-left: 15px; }
-        .lineage-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-family: var(--header-font); font-size: 0.85rem; }
-        .lineage-table td { border: 1px solid var(--border); padding: 15px; vertical-align: top; }
-        .node-title { color: #fff; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 5px; }
+        nav { position: sticky; top: 0; background: var(--surface); border-bottom: 1px solid var(--border); padding: 15px 0; z-index: 100; }
+        .nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+        .nav-item { text-decoration: none; color: var(--text-dim); font-family: var(--header-font); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-item:hover { color: var(--text-bright); }
+        section { margin-bottom: 150px; border-top: 1px solid var(--border); padding-top: 50px; }
+        h2 { font-family: var(--header-font); font-size: 1.8rem; text-transform: uppercase; color: var(--text-bright); margin-bottom: 10px; }
+        .toc { background: #111; padding: 25px; border: 1px solid var(--border); margin: 30px 0; font-family: var(--header-font); font-size: 0.85rem; }
+        .toc h3 { margin-top: 0; font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .toc ul { list-style: none; padding: 0; }
+        .toc li { margin-bottom: 8px; border-bottom: 1px dashed #222; padding-bottom: 4px; }
+        .intro-box { font-style: italic; border-left: 3px solid var(--text-dim); padding-left: 20px; margin: 40px 0; color: var(--text-bright); }
         .receipt-box { background-color: var(--surface); border: 1px solid var(--border); padding: 25px; margin: 40px 0; font-family: var(--header-font); font-size: 0.85rem; }
-        .receipt-box h4 { margin-top: 0; text-transform: uppercase; font-size: 0.7rem; border-bottom: 1px solid var(--border); padding-bottom: 10px; color: var(--text-bright); margin-bottom: 15px; }
-        .gap-alert { color: #ff4d4d; border: 1px solid #ff4d4d; padding: 10px; margin-top: 10px; font-size: 0.75rem; text-transform: uppercase; }
-        .tag { color: var(--text-bright); font-size: 0.65rem; background: #222; padding: 2px 5px; border: 1px solid #333; }
+        .receipt-box h4 { margin-top: 0; text-transform: uppercase; font-size: 0.7rem; color: var(--text-bright); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 15px; }
+        .dropcap { float: left; font-size: 3.5rem; line-height: 1; font-weight: 700; margin-right: 12px; font-family: var(--header-font); color: var(--text-bright); }
         footer { border-top: 1px solid var(--border); padding: 60px; text-align: center; font-family: var(--header-font); font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 3px; }
     </style>
 </head>
 <body>
+
 <header>
     <h1>The Architecture of the Steersman</h1>
-    <div class="subtitle">Forensic Genealogy // Psycho-Technical Feedback Loop Audit // 2026 Update</div>
+    <div class="subtitle">A 5,000-Year Genealogy of the Control State // Cumulative Forensic Audit</div>
 </header>
-<div class="container">
-    <div class="nav-grid">
-        <a href="#vol1" class="nav-item">Vol I: Hardware</a>
-        <a href="#vol2" class="nav-item">Vol II: Psychology</a>
-        <a href="#vol3" class="nav-item">Vol III: Finance</a>
-        <a href="#vol4" class="nav-item">Vol IV: Intelligence</a>
+
+<nav>
+    <div class="container nav-grid">
+        <a href="#vol1" class="nav-item">Book I: Hardware</a>
+        <a href="#vol2" class="nav-item">Book II: Psychology</a>
+        <a href="#vol3" class="nav-item">Book III: Finance</a>
+        <a href="#vol4" class="nav-item">Book IV: Intelligence</a>
     </div>
+</nav>
 
-    <!-- VOLUME I -->
+<div class="container">
+
+    <!-- BOOK I: THE SOVEREIGN HARDWARE -->
     <section id="vol1">
-        <h2>Volume I: The Sovereign Hardware</h2>
-        <span class="metadata">CASE FILE: 001 // SENSOR-TRANSDUCTION-LOGIC</span>
+        <h2>Book I: The Sovereign Hardware</h2>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li>Chapter 1: The Nilometer and the Administrative Logos</li>
+                <li>Chapter 2: The Imperial Data Bus (Roman Roads)</li>
+                <li>Chapter 3: The Monastic Machine (The Clock)</li>
+                <li>Chapter 4: The Printing Processor (Movable Type)</li>
+                <li>Chapter 5: The Jacobin Reset (The Guillotine)</li>
+                <li>Chapter 6: The Telegraphic Decoupling</li>
+                <li>Chapter 7: The Boolean Sorter (IBM Hollerith)</li>
+                <li>Chapter 8: The 2026 Sovereign AI Edge (H100/Scale Donovan)</li>
+            </ul>
+        </div>
         
-        <table class="lineage-table">
-            <tr><td width="20%"><span class="tag">3000 BCE</span></td><td><span class="node-title">The Nilometer</span>Transduction of hydrological energy into fiscal policy. The primal sensor.</td></tr>
-            <tr><td><span class="tag">1792 CE</span></td><td><span class="node-title">The Jacobin Guillotine</span>Industrial kinetic feedback. Standardized hardware for state-system "cleanup."</td></tr>
-            <tr><td><span class="tag">1968 CE</span></td><td><span class="node-title">SRI / Latency Reduction</span>Augmented Human Intellect (Engelbart). Hardware as a latency-reduction platform for the OODA loop.</td></tr>
-            <tr><td><span class="tag">2026 CE</span></td><td><span class="node-title">TITAN / H100 Edge</span>US Army TITAN program. Distributed sensory-motor processing for zero-latency tactical sovereignty.</td></tr>
-        </table>
-        
+        <div class="intro-box">
+            "Power begins with the physical capture of the variable. Before the first decree was spoken, the first signal had to be transduced. Hardware is the substrate that converts the chaotic environment into a manageable administrative signal."
+        </div>
+
+        <h3>Chapter 1: The Nilometer and the Birth of the Administrative Logos</h3>
+        <p><span class="dropcap">T</span>he state is not a social contract; it is a sensor network. In the Nile Valley, c. 3000 BCE, the variable was the river—the source of all regional energy. Control was a function of <b>Transduction</b>: converting hydrological pressure into a fiscal signal.</p>
+        <p>The <b>Nilometer</b>—a stone gauge—quantized the analog environment into numerical data. This data was fed into a Negative Feedback Loop managed by the priesthood. A 16-cubit flood triggered the taxation algorithm; failure to reach the mark triggered grain redistribution to prevent entropy (starvation/revolt).</p>
+
         <div class="receipt-box">
-            <h4>Forensic Gap: Focus Area 2 (Hardware Transduction)</h4>
-            Evidence required: DARPA/CIA project contracts with SRI (1960-1980) linking Engelbart's NLS to direct Command & Control force multipliers.
+            <h4>Forensic Receipt: The Hydraulic Homeostat</h4>
+            <b>INPUT:</b> Hydrological Energy // <b>TRANSDUCER:</b> Nilometer // <b>OUTPUT:</b> Taxation / Grain Homeostasis
         </div>
     </section>
 
-    <!-- VOLUME II -->
+    <!-- BOOK II: THE PSYCHOLOGICAL ENCLOSURE -->
     <section id="vol2">
-        <h2>Volume II: The Psychological Enclosure</h2>
-        <span class="metadata">CASE FILE: 002 // COGNITIVE-MODULATION</span>
-        
-        <table class="lineage-table">
-            <tr><td width="20%"><span class="tag">1215 CE</span></td><td><span class="node-title">The Confessional</span>Mandatory psychological data-input interface. The birth of the internalized governor.</td></tr>
-            <tr><td><span class="tag">1946 CE</span></td><td><span class="node-title">The Macy Transduction</span>Kurt Lewin & Margaret Mead. Converting Frankfurt School "Critical Theory" into the cybernetic language of social homeostasis.</td></tr>
-            <tr><td><span class="tag">2026 CE</span></td><td><span class="node-title">Project Archetype</span>Algorithmic Consensus. Using RLHF to move from analyzing social reality to algorithmically governing its boundaries.</td></tr>
-        </table>
-
-        <div class="receipt-box">
-            <h4>Forensic Gap: Focus Area 1 (Psychological Firmware)</h4>
-            Evidence required: Personnel and funding links (Ford/Rockefeller grants) connecting Frankfurt émigrés (Adorno/Horkheimer) to early Macy Conference invitation lists.
+        <h2>Book II: The Psychological Enclosure</h2>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li>Chapter 1: Mystery Schools: Ritual as Cognitive OS</li>
+                <li>Chapter 2: The Confessional: Mandatory Internal Auditing</li>
+                <li>Chapter 3: Jesuit Ratio Studiorum: Directed Neuroplasticity</li>
+                <li>Chapter 4: The American OS: Constitutional Cybernetics</li>
+                <li>Chapter 5: The Frankfurt-Macy Bridge: Social Homeostasis</li>
+                <li>Chapter 6: The Hearst Perception Engine: Sentiment Loops</li>
+                <li>Chapter 7: The Mimetic Stack: RLHF and the Latent Space</li>
+            </ul>
         </div>
+        
+        <div class="intro-box">
+            "The most efficient system of control is the one where the subject corrects their own behavior. Volume II documents the software updates applied to the human psyche to install the Internalized Governor."
+        </div>
+        
+        <p><span class="dropcap">I</span>f Book I is the Body, Book II is the Brain. The Steersman realized early that kinetic force is high-latency and high-cost. To scale, power had to move inside the subject. This began with the <b>Confessional</b> (1215 CE), the first mandatory psychological data-input interface, and evolved into the <b>Frankfurt-Macy Bridge</b>, where "Critical Theory" was transduced into the cybernetic language of engineered social stability.</p>
     </section>
 
-    <!-- VOLUME IV -->
+    <!-- BOOK III: THE FINANCIAL RUDDER -->
+    <section id="vol3">
+        <h2>Book III: The Financial Rudder</h2>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li>Chapter 1: The Debt Sensor: Babylonian Interest-Bearing Debt</li>
+                <li>Chapter 2: The Binary Ledger: Double-Entry Bookkeeping</li>
+                <li>Chapter 3: The Pricing of God: Maritime Insurance</li>
+                <li>Chapter 4: The Rothschild Grid: Information Arbitrage</li>
+                <li>Chapter 5: The In-Q-Tel Probe: State Venture Capital</li>
+                <li>Chapter 6: The 2026 Enclosure: Energy-for-Compute</li>
+            </ul>
+        </div>
+        
+        <div class="intro-box">
+            "Capital is the Systemic Delta. It is the informational signal used to steer human activity through the price of risk and the weight of debt."
+        </div>
+        <p><span class="dropcap">M</span>oney is not a medium of exchange; it is a command signal. From the <b>Babylonian Jubilee</b> to the 2026 <b>BlackRock/Microsoft Energy Merger</b>, capital has functioned as the rudder of the state-ship, using debt to anchor behavior and risk-pricing to navigate the entropic currents of history.</p>
+    </section>
+
+    <!-- BOOK IV: THE INTELLIGENCE NERVOUS SYSTEM -->
     <section id="vol4">
-        <h2>Volume IV: The Intelligence Nervous System</h2>
-        <span class="metadata">CASE FILE: 004 // LATENCY-OWNERSHIP</span>
+        <h2>Book IV: The Intelligence Nervous System</h2>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li>Chapter 1: John Dee: Navigational Cryptography</li>
+                <li>Chapter 2: The Social Compiler: Skull & Bones</li>
+                <li>Chapter 3: The SIGINT Pivot: Cable Sabotage</li>
+                <li>Chapter 4: The Metadata Doctrine: SHAMROCK to TIA</li>
+                <li>Chapter 5: Zero-Latency Sovereignty: Agentic Coalitions</li>
+            </ul>
+        </div>
         
-        <table class="lineage-table">
-            <tr><td width="20%"><span class="tag">1564 CE</span></td><td><span class="node-title">John Dee</span>Navigational Cryptography. Treating the global map as a signal-acquisition environment.</td></tr>
-            <tr><td><span class="tag">2001 CE</span></td><td><span class="node-title">The 9/11 System Reset</span>Systemic shock used to restore homeostasis via the TIA (Total Information Awareness) response.</td></tr>
-            <tr><td><span class="tag">2026 CE</span></td><td><span class="node-title">Agentic Turn</span>Interoperable AI Coalitions sharing "Signal Weights." Zero-latency response within the adversary's cycle.</td></tr>
-        </table>
-
-        <div class="receipt-box">
-            <h4>Forensic Gap: Focus Area 3 (System Reset Migration)</h4>
-            Evidence required: Technical migration path/patents from Poindexter’s DARPA TIA office to Palantir and Google’s "Pattern-of-Life" analysis engines.
+        <div class="intro-box">
+            "Sovereignty is the ownership of Latency. The system that reacts within the decision-cycle of its adversary attains signal dominance."
         </div>
+        <p><span class="dropcap">T</span>he final layer of the stack is the ownership of time itself. By reducing the gap between an event and the response (The OODA Loop), the Steersman achieves <b>Signal Dominance</b>. This culminated in the <b>9/11 System Reset</b> and the TIA protocol, moving control from monitoring individuals to mapping the aggregate species behavior in real-time.</p>
     </section>
 
-    <section id="glossary">
-        <h2>Master Terminology Ledger</h2>
-        <div class="receipt-box" style="font-size: 0.8rem;">
-            <b>OODA LOOP:</b> Boyd's cycle (Observe-Orient-Decide-Act). Dominance through speed of internal processing.<br>
-            <b>TRANSDUCTION:</b> Conversion of environmental signals into system-encoded data.<br>
-            <b>HOMEOSTASIS:</b> The state of systemic stability maintained by negative feedback loops.<br>
-            <b>LATENCY:</b> The critical delay between input and output. Ownership of latency = Sovereignty.
-        </div>
-    </section>
 </div>
 
 <footer>
