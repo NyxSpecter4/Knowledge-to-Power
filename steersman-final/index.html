@@ -9,122 +9,53 @@
         :root { --bg: #0a0a0a; --surface: #121212; --border: #333; --accent: #00ff41; --text-main: #d1d1d1; --text-dim: #777; --header-font: 'Inter', sans-serif; --mono-font: 'JetBrains Mono', monospace; }
         body { background-color: var(--bg); color: var(--text-main); font-family: var(--header-font); margin: 0; line-height: 1.6; overflow-x: hidden; }
         header { border-bottom: 1px solid var(--border); padding: 60px 20px; text-align: center; background: linear-gradient(to bottom, #111, #0a0a0a); }
-        h1 { font-family: var(--mono-font); font-size: 2.5rem; letter-spacing: -1px; color: var(--accent); margin: 0; text-transform: uppercase; }
-        .subtitle { font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 6px; margin-top: 15px; }
+        h1 { font-family: var(--mono-font); font-size: 2.2rem; letter-spacing: -1px; color: var(--accent); margin: 0; text-transform: uppercase; }
+        .subtitle { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 5px; margin-top: 15px; }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 80px; }
-        .nav-item { border: 1px solid var(--border); padding: 15px; text-align: center; font-family: var(--mono-font); font-size: 0.8rem; cursor: pointer; transition: all 0.3s; text-decoration: none; color: var(--text-dim); }
-        .nav-item:hover { border-color: var(--accent); color: var(--accent); background: rgba(0, 255, 65, 0.05); }
-        section { margin-bottom: 120px; border-left: 2px solid var(--border); padding-left: 40px; position: relative; }
-        section::before { content: ""; position: absolute; left: -6px; top: 0; width: 10px; height: 10px; background: var(--accent); }
-        h2 { font-family: var(--mono-font); font-size: 1.8rem; color: #fff; margin-bottom: 10px; text-transform: uppercase; }
-        .thesis { font-style: italic; color: var(--accent); margin-bottom: 40px; font-size: 1.1rem; border-bottom: 1px solid #222; padding-bottom: 20px; }
-        .lineage-table { width: 100%; border-collapse: collapse; margin-top: 30px; font-family: var(--mono-font); font-size: 0.85rem; }
-        .lineage-table th, .lineage-table td { border: 1px solid var(--border); padding: 20px; text-align: left; vertical-align: top; }
-        .lineage-table th { background-color: var(--surface); color: var(--text-dim); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
-        .node-title { color: #fff; font-weight: bold; display: block; margin-bottom: 10px; font-size: 1rem; text-transform: uppercase; }
-        .shadow-manuals { margin-top: 40px; background: var(--surface); padding: 30px; border: 1px dashed var(--border); }
-        .shadow-manuals h4 { margin-top: 0; color: var(--accent); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 20px; }
-        .manual-item { margin-bottom: 10px; font-size: 0.9rem; }
-        .manual-name { color: #fff; font-weight: bold; }
-        .convergence { background: #1a1a1a; border: 1px solid var(--accent); padding: 60px 40px; text-align: center; margin-top: 60px; }
-        .tag { background: #222; padding: 4px 8px; border-radius: 3px; font-size: 0.7rem; margin-bottom: 10px; display: inline-block; color: var(--accent); border: 1px solid #333; }
-        footer { border-top: 1px solid var(--border); padding: 60px; text-align: center; font-family: var(--mono-font); font-size: 0.75rem; color: var(--text-dim); letter-spacing: 2px; }
+        section { margin-bottom: 100px; border-left: 2px solid var(--border); padding-left: 30px; position: relative; }
+        h2 { font-family: var(--mono-font); font-size: 1.5rem; color: #fff; margin-bottom: 10px; text-transform: uppercase; }
+        .thesis { font-style: italic; color: var(--accent); margin-bottom: 30px; font-size: 1rem; border-bottom: 1px solid #222; padding-bottom: 20px; }
+        .lineage-table { width: 100%; border-collapse: collapse; font-family: var(--mono-font); font-size: 0.8rem; }
+        .lineage-table td { border: 1px solid var(--border); padding: 15px; vertical-align: top; }
+        .node-title { color: #fff; font-weight: bold; display: block; margin-bottom: 5px; text-transform: uppercase; }
+        .tag { background: #222; padding: 2px 6px; border-radius: 3px; color: var(--accent); font-size: 0.7rem; }
+        footer { border-top: 1px solid var(--border); padding: 40px; text-align: center; font-family: var(--mono-font); font-size: 0.7rem; color: var(--text-dim); }
     </style>
 </head>
 <body>
 <header>
     <h1>The Architecture of the Steersman</h1>
-    <div class="subtitle">5,000-Year Genealogy of the Control State // Forensic Data Repository</div>
+    <div class="subtitle">5,000-Year Forensic Audit // Intelligence Briefing</div>
 </header>
 <div class="container">
-    <div class="nav-grid">
-        <a href="#vol1" class="nav-item">VOL I: HARDWARE</a>
-        <a href="#vol2" class="nav-item">VOL II: PSYCHOLOGY</a>
-        <a href="#vol3" class="nav-item">VOL III: FINANCE</a>
-        <a href="#vol4" class="nav-item">VOL IV: INTELLIGENCE</a>
-    </div>
-
-    <!-- VOLUME I: HARDWARE -->
-    <section id="vol1">
-        <h2>VOLUME I: THE SOVEREIGN HARDWARE</h2>
-        <div class="thesis">Power begins with the physical capture of the variable. Hardware is "Governance in Concrete."</div>
+    <section>
+        <h2>VOL I: THE SOVEREIGN HARDWARE</h2>
+        <div class="thesis">Infrastructure as Permanent Decree.</div>
         <table class="lineage-table">
-            <thead><tr><th style="width: 20%;">Era / Node</th><th>Mechanism & Transduction Logic (Hardware Receipts)</th></tr></thead>
-            <tbody>
-                <tr><td><span class="tag">3000 BCE</span><br>Hydraulic Sensor</td><td><span class="node-title">The Nilometer</span>Transduction of river-energy into tax-stelae. The first hardware-interface between environment and fiscal extraction.</td></tr>
-                <tr><td><span class="tag">500 BCE</span><br>Imperial Bus</td><td><span class="node-title">The Roman Road</span>Standardized hardware bus for the transmission of corrective signals (Legions/Decrees). Continental-scale integration.</td></tr>
-                <tr><td><span class="tag">1300 CE</span><br>Temporal OS</td><td><span class="node-title">Mechanical Escapement</span>Standardization of human labor through quantized time. The clock as the first synchronization protocol for factory-scale behavior.</td></tr>
-                <tr><td><span class="tag">1450 CE</span><br>Linguistic Compiler</td><td><span class="node-title">Movable Type</span>Standardization of "Vernacular Code." Creating interoperable linguistic subjects for direct state addressing.</td></tr>
-                <tr><td><span class="tag">1792 CE</span><br>Jacobin Reset</td><td><span class="node-title">The Guillotine</span>Standardized hardware for "System Cleanup." Mechanical kinetic feedback to remove system "noise" (The Aristocracy) with industrial throughput.</td></tr>
-                <tr><td><span class="tag">1837 CE</span><br>Decoupled Signal</td><td><span class="node-title">Electric Telegraph</span>Decoupling information from the transport of matter. Command signals move faster than mass for the first time.</td></tr>
-                <tr><td><span class="tag">1890 CE</span><br>Boolean Sorter</td><td><span class="node-title">IBM Hollerith Card</span>Mechanization of the census. Boolean sorting of population-scale data for industrial resource management.</td></tr>
-                <tr><td><span class="tag">2026 CE</span><br>Tactical Edge</td><td><span class="node-title">TITAN / H100 GPU Nodes</span>Hardware for zero-latency tactical sovereignty. Distributed sensory-motor processing at the tactical edge.</td></tr>
-            </tbody>
+            <tr><td width="20%"><span class="tag">1968 CE</span><br>SRI Interface</td><td><span class="node-title">Augmented Human Intellect</span>Doug Engelbart (SRI) narrows the latency between thought and machine. Foundation of the global data bus (ARPANET).</td></tr>
+            <tr><td><span class="tag">2026 CE</span><br>Tactical Edge</td><td><span class="node-title">H100 Sovereign Stack</span>Scale Donovan and TITAN. Distributed sensory-motor processing replacing centralized command.</td></tr>
         </table>
-        <div class="shadow-manuals">
-            <h4>Shadow Manuals: Vol I</h4>
-            <div class="manual-item"><span class="manual-name">The Power Broker (Robert Caro):</span> Autopsy of infrastructure as permanent, law-bypassing social decree.</div>
-            <div class="manual-item"><span class="manual-name">Seeing Like a State (James C. Scott):</span> The logic of legibility; how states use maps to simplify and extract.</div>
-        </div>
     </section>
-
-    <!-- VOLUME II: PSYCHOLOGY -->
-    <section id="vol2">
-        <h2>VOLUME II: THE PSYCHOLOGICAL ENCLOSURE</h2>
-        <div class="thesis">Control is most efficient when internalized. The subject must correct their own deviation.</div>
+    <section>
+        <h2>VOL II: THE PSYCHOLOGICAL ENCLOSURE</h2>
+        <div class="thesis">Engineering Social Homeostasis via the Tavistock Loop.</div>
         <table class="lineage-table">
-            <thead><tr><th style="width: 20%;">Era / Node</th><th>Cognitive Modulation Logic (Psychology Receipts)</th></tr></thead>
-            <tbody>
-                <tr><td><span class="tag">3000 BCE</span><br>Ritual Reboot</td><td><span class="node-title">Mystery Schools</span>Initiation as a cognitive feedback loop to ensure elite social cohesion and a shared symbolic operating system.</td></tr>
-                <tr><td><span class="tag">1215 CE</span><br>Mandatory Audit</td><td><span class="node-title">The Confessional</span>The first state-mandated psychological data-input interface. Internalizing the governor through mandatory self-audit.</td></tr>
-                <tr><td><span class="tag">1599 CE</span><br>Directed Plasticity</td><td><span class="node-title">Jesuit Ratio Studiorum</span>Standardized pedagogical OS. Engineering the internal "Latent Space" of the elite through narrative steering.</td></tr>
-                <tr><td><span class="tag">1776 CE</span><br>Constitutional OS</td><td><span class="node-title">The American OS</span>Hard-coding "Checks and Balances" as a self-correcting administrative architecture designed to inhibit single-node dominance.</td></tr>
-                <tr><td><span class="tag">1890 CE</span><br>Perception Engine</td><td><span class="node-title">Hearst Journalism</span>Operationalization of mass sentiment. Using "Yellow Journalism" to amplify public awe and outrage to trigger state outcomes.</td></tr>
-                <tr><td><span class="tag">1946 CE</span><br>Macy Reset</td><td><span class="node-title">Cybernetic Homeostasis</span>Modeling human culture as a "Steady-State" system maintained by informational feedback and reward/punishment loops.</td></tr>
-                <tr><td><span class="tag">2026 CE</span><br>Mimetic Stack</td><td><span class="node-title">Project Archetype / RLHF</span>Automated alignment of the global "Latent Space" via RLHF. Encoding consensus directly into neural weights.</td></tr>
-            </tbody>
+            <tr><td width="20%"><span class="tag">1930 CE</span><br>Frankfurt Logic</td><td><span class="node-title">The Authoritarian Personality</span>Adorno/Horkheimer map social entropy. Theoretical software for later cybernetic modulation.</td></tr>
+            <tr><td><span class="tag">1946 CE</span><br>Macy Bridge</td><td><span class="node-title">Kurt Lewin / Tavistock</span>Action Research. Moving from "Critical Theory" to engineered "Social Homeostasis" through feedback.</td></tr>
         </table>
-        <div class="shadow-manuals">
-            <h4>Shadow Manuals: Vol II</h4>
-            <div class="manual-item"><span class="manual-name">Propaganda (Edward Bernays):</span> The manual for wiring mass subconscious desire to political/commercial output.</div>
-            <div class="manual-item"><span class="manual-name">Fire in the Minds of Men (James Billington):</span> Genealogy of ideological viruses and state re-engineering.</div>
-        </div>
     </section>
-
-    <!-- VOLUME III: FINANCE -->
-    <section id="vol3">
-        <h2>VOLUME III: THE FINANCIAL RUDDER</h2>
-        <div class="thesis">Capital is the Systemic Delta. It steers human activity through the price of risk and the weight of debt.</div>
+    <section>
+        <h2>VOL IV: THE INTELLIGENCE NERVOUS SYSTEM</h2>
+        <div class="thesis">Latency Ownership and the 9/11 System Reset.</div>
         <table class="lineage-table">
-            <thead><tr><th style="width: 20%;">Era / Node</th><th>Steering Mechanism (Finance Receipts)</th></tr></thead>
-            <tbody>
-                <tr><td><span class="tag">2000 BCE</span><br>Debt Sensor</td><td><span class="node-title">Babylonian Interest</span>Debt as a time-binding transducer. Converting future labor into present-day liquid assets with a Jubilee "reset" button.</td></tr>
-                <tr><td><span class="tag">1340 CE</span><br>Binary Ledger</td><td><span class="node-title">Double-Entry</span>The birth of the binary feedback loop in enterprise. Capital gains the ability to see and correct its own state.</td></tr>
-                <tr><td><span class="tag">1347 CE</span><br>Risk Transduction</td><td><span class="node-title">Maritime Insurance</span>Converting "Uncertainty" (Acts of God) into a priced risk variable. Capital allocation guided by probabilistic algorithms.</td></tr>
-                <tr><td><span class="tag">1815 CE</span><br>Rothschild Grid</td><td><span class="node-title">Information Arbitrage</span>Ownership of signal-latency. Transducing news (Waterloo) into capital movements before official market observation.</td></tr>
-                <tr><td><span class="tag">1944 CE</span><br>Global Governor</td><td><span class="node-title">Bretton Woods</span>The supranational feedback mechanism designed to dampen trade-imbalance oscillations through currency pegs.</td></tr>
-                <tr><td><span class="tag">1999 CE</span><br>Venture Probe</td><td><span class="node-title">In-Q-Tel</span>The state as VC. Using market-sensing to fund and harden surveillance tech (Palantir/Keyhole) before public diffusion.</td></tr>
-                <tr><td><span class="tag">2026 CE</span><br>Energy Enclosure</td><td><span class="node-title">BlackRock/Microsoft Deal</span>Tying the financial rudder directly to the energy grid. Energy flows become the ultimate currency of AI compute power.</td></tr>
-            </tbody>
+            <tr><td width="20%"><span class="tag">1972 CE</span><br>SRI Signal</td><td><span class="node-title">Remote Viewing (Stargate)</span>Attempt at hardware-less signal acquisition. Transition to mass-metadata processing logic.</td></tr>
+            <tr><td><span class="tag">2001 CE</span><br>System Reset</td><td><span class="node-title">9/11 TIA Protocol</span>Total Information Awareness. Moving from targeted surveillance to pattern discovery across the entire species aggregate.</td></tr>
+            <tr><td><span class="tag">2026 CE</span><br>Agentic Turn</td><td><span class="node-title">Sovereign Agentic Coalitions</span>Multi-agent AI systems executing OODA loops at light-speed. Agency as a non-human function.</td></tr>
         </table>
-        <div class="shadow-manuals">
-            <h4>Shadow Manuals: Vol III</h4>
-            <div class="manual-item"><span class="manual-name">The Sovereign Individual (Davidson/Rees-Mogg):</span> The forecast of power decoupling from territory through cryptography.</div>
-            <div class="manual-item"><span class="manual-name">The Creature from Jekyll Island (G. Edward Griffin):</span> The central bank as the ultimate systemic rudder.</div>
-        </div>
     </section>
-
-    <!-- VOLUME IV: INTELLIGENCE -->
-    <section id="vol4">
-        <h2>VOLUME IV: THE INTELLIGENCE NERVOUS SYSTEM</h2>
-        <div class="thesis">Sovereignty is the ownership of Latency. Signal Dominance is the elimination of the decision-gap.</div>
-        <table class="lineage-table">
-            <thead><tr><th style="width: 20%;">Era / Node</th><th>Signal & Latency Logic (Intelligence Receipts)</th></tr></thead>
-            <tbody>
-                <tr><td><span class="tag">1564 CE</span><br>Nav-Cryptography</td><td><span class="node-title">John Dee</span>Treatment of the global map as a signal-acquisition environment. Securing the OODA advantage through cryptographic secrecy.</td></tr>
-                <tr><td><span class="tag">1832 CE</span><br>Social Compiler</td><td><span class="node-title">Skull & Bones</span>The Yale "Lifetime Trust Protocol." Pre-compiling elite social nodes into a low-latency network of influence and trust.</td></tr>
-                <tr><td><span class="tag">1914 CE</span><br>Signal Intercept</td><td><span class="node-title">Room 40 / Ultra</span>The evolution from breaking "signal encryption" to machine-aided cryptanalysis. Shortening WWII via OODA compression.</td></tr>
-                <tr><td><span class="tag">1945 CE</span><br>Metadata Shift</td><td><span class="node-title">SHAMROCK / TIA</span>Transition to bulk data ingestion. Mapping the "Haystack" to model and predict system-wide population behavior.</td></tr>
-                <tr><td><span class="tag">2013 CE</span><br>Upstream Taps</td><td><span class="node-title">"Collect It All"</span>Hardware-level signal ingestion. Ownership of fiber backbones to eliminate informational escape-velocity.</td></tr>
-                <tr><td><span class="
+</div>
+<footer>
+    SOVEREIGN INTELLIGENCE BRIEFING // CASE: STEERSMAN // BY V.K. ELARA
+</footer>
+</body>
+</html>
