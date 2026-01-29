@@ -7,12 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f4f1ea; /* Bone/Parchment */
-            --surface: #ffffff;
-            --border: #222222;
-            --text-main: #1a1a1a; /* Deep Charcoal */
-            --text-dim: #555555;
-            --accent: #222222;
+            --bg: #0d0d0d; /* Archive Midnight */
+            --surface: #161616; /* Low-glare Slate */
+            --border: #333333;
+            --text-main: #c4c4c4; /* Dimmed Silver - Low Eye Strain */
+            --text-bright: #ffffff;
+            --text-dim: #777777;
             --header-font: 'Inter', sans-serif;
             --body-font: 'Crimson Pro', serif;
         }
@@ -23,11 +23,11 @@
             font-family: var(--body-font);
             margin: 0;
             line-height: 1.7;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         header {
-            border-bottom: 2px solid var(--border);
+            border-bottom: 1px solid var(--border);
             padding: 80px 20px;
             text-align: center;
             background-color: var(--surface);
@@ -35,130 +35,153 @@
 
         h1 {
             font-family: var(--header-font);
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin: 0;
             text-transform: uppercase;
             letter-spacing: -1px;
+            color: var(--text-bright);
         }
 
         .subtitle {
             font-family: var(--header-font);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-dim);
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             margin-top: 15px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
         section {
-            margin-bottom: 100px;
+            margin-bottom: 120px;
         }
 
         h2 {
             font-family: var(--header-font);
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--border);
+            font-size: 1.6rem;
+            border-bottom: 1px solid var(--border);
             padding-bottom: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             text-transform: uppercase;
+            color: var(--text-bright);
+            letter-spacing: 2px;
         }
 
         .chapter-title {
             font-family: var(--header-font);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-top: 50px;
-            color: var(--text-main);
+            margin-top: 60px;
+            color: var(--text-bright);
         }
 
         .metadata {
             font-family: var(--header-font);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             color: var(--text-dim);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: block;
-            border-left: 3px solid var(--border);
-            padding-left: 10px;
+            border-left: 2px solid var(--text-dim);
+            padding-left: 15px;
         }
 
-        p { margin-bottom: 25px; text-align: justify; }
+        p { margin-bottom: 30px; text-align: justify; }
 
         .receipt-box {
-            background-color: #fff;
+            background-color: var(--surface);
             border: 1px solid var(--border);
-            padding: 25px;
-            margin: 40px 0;
+            padding: 30px;
+            margin: 50px 0;
             font-family: var(--header-font);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            color: var(--text-main);
         }
 
         .receipt-box h4 {
             margin-top: 0;
             text-transform: uppercase;
-            font-size: 0.75rem;
-            border-bottom: 1px solid #eee;
+            font-size: 0.7rem;
+            border-bottom: 1px solid var(--border);
             padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: var(--text-bright);
         }
 
         footer {
             border-top: 1px solid var(--border);
-            padding: 60px;
+            padding: 80px;
             text-align: center;
             font-family: var(--header-font);
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text-dim);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .dropcap {
             float: left;
-            font-size: 4rem;
+            font-size: 3.5rem;
             line-height: 1;
             font-weight: 700;
-            margin-right: 10px;
+            margin-right: 12px;
             font-family: var(--header-font);
+            color: var(--text-bright);
         }
+
+        strong { color: var(--text-bright); }
     </style>
 </head>
 <body>
 
 <header>
     <h1>The Architecture of the Steersman</h1>
-    <div class="subtitle">A Forensic Genealogy of the Control State // 3000 BCE - 2026 CE</div>
+    <div class="subtitle">Genealogy of the Control State // Forensic Data Entry 3000 BCE - 2026 CE</div>
 </header>
 
 <div class="container">
     
     <section>
         <h2>Volume I: The Sovereign Hardware</h2>
-        <span class="metadata">CASE FILE: 001 // SENSOR-TRANSDUCTION-LOGIC</span>
+        <span class="metadata">ADMINISTRATIVE LOGOS // SENSOR-TRANSDUCTION-LOGIC</span>
         
         <div class="chapter-title">Chapter 1: The Nilometer and the Birth of the Administrative Logos</div>
         
-        <p><span class="dropcap">T</span>he state is not a social contract; it is a sensor network. Before the first decree was spoken, the first variable had to be captured. In the Nile Valley, c. 3000 BCE, the variable was the river—the entropic source of all caloric energy in the region. The Egyptian Old Kingdom realized that to rule the people, one did not monitor the people; one monitored the river. Control was a function of <b>Transduction</b>: the conversion of hydrological pressure into a fiscal signal.</p>
+        <p><span class="dropcap">T</span>he state is not a social contract; it is a sensor network. Before the first decree was spoken, the first variable had to be captured. In the Nile Valley, c. 3000 BCE, the variable was the river—the entropic source of all caloric energy in the region. The Egyptian Old Kingdom realized that to rule the people, one did not monitor the people; one monitored the river. Control was a function of <strong>Transduction</strong>: the conversion of hydrological pressure into a fiscal signal.</p>
 
-        <p>The <b>Nilometer</b> was the physical hardware of this transduction. It was a calibrated stone gauge, a vertical column or a descending staircase marked in cubits, palms, and fingers. It acted as the interface between the chaotic flow of nature and the rigid ledger of the priesthood. When the floodwaters touched the stone, the analog environment was quantized. A physical height was converted into a numerical value.</p>
+        <p>The <strong>Nilometer</strong> was the physical hardware of this transduction. It was a calibrated stone gauge, a vertical column or a descending staircase marked in cubits, palms, and fingers. It acted as the interface between the chaotic flow of nature and the rigid ledger of the priesthood. When the floodwaters touched the stone, the analog environment was quantized. A physical height was converted into a numerical value.</p>
 
-        <p>This data was immediately fed into a <b>Negative Feedback Loop</b> managed by the Priesthood of Measurement. A flood of 16 cubits was the "Set Point"—the signal for an optimal harvest. This data point triggered the "Output": the calculation of the grain tax. If the water failed to reach the marks, the state sensed drought and responded by releasing grain from centralized silos to prevent the entropy of starvation and revolt. If the water exceeded the marks, the state sensed destructive flooding and prepared the kinetic infrastructure for repair and rationing.</p>
+        <p>This data was immediately fed into a <strong>Negative Feedback Loop</strong> managed by the Priesthood of Measurement. A flood of 16 cubits was the "Set Point"—the signal for an optimal harvest. This data point triggered the "Output": the calculation of the grain tax. If the water failed to reach the marks, the state sensed drought and responded by releasing grain from centralized silos to prevent the entropy of starvation and revolt. If the water exceeded the marks, the state sensed destructive flooding and prepared the kinetic infrastructure for repair and rationing.</p>
 
         <div class="receipt-box">
             <h4>Forensic Receipt: The Hydraulic Homeostat</h4>
-            <b>INPUT:</b> Nile Inundation Level (Hydrological Energy)<br>
-            <b>TRANSDUCER:</b> The Nilometer (Calibrated Stone Gauge)<br>
-            <b>PROCESSING:</b> Priestly Caloric Calculation (Taxation Algorithm)<br>
-            <b>OUTPUT:</b> Fiscal Levy / Grain Distribution (Social Homeostasis)
+            <strong>INPUT:</strong> Nile Inundation Level (Hydrological Energy)<br>
+            <strong>TRANSDUCER:</strong> The Nilometer (Calibrated Stone Gauge)<br>
+            <strong>PROCESSING:</strong> Priestly Caloric Calculation (Taxation Algorithm)<br>
+            <strong>OUTPUT:</strong> Fiscal Levy / Grain Distribution (Social Homeostasis)
         </div>
 
-        <p>The Nilometer proves that sovereignty is the ability to maintain a <b>Zero-Latency</b> relationship with the primary variable of survival. The state became an "Administrative Logos"—a machine that processed water into wheat, and wheat into power. For five thousand years, this logic has never changed. We have only swapped the stone for silicon and the river for the data-stream.</p>
+        <div class="chapter-title">Chapter 2: The Imperial Data Bus and the Roman Censor</div>
+        
+        <p>Rome scaled the Egyptian river-valley logic to a continental plateau. The challenge for the Roman Steersman was <strong>Latency</strong>. In a territory spanning three million square miles, the signal-to-noise ratio was precarious. To achieve homeostasis, Rome built the first integrated hardware data bus: <strong>The Roman Road</strong>.</p>
+
+        <p>The roads were not designed for commerce; they were engineered for <strong>Signal Velocity</strong>. They were the physical cables of the empire, built with standardized foundations (the <i>agger</i>) and graded for the rapid transit of the <i>Cursus Publicus</i> (the state intelligence service). The hardware bus allowed a corrective signal—whether a tax decree or a military legion—to move from the core to the periphery at the maximum throughput allowed by biological mass.</p>
+
+        <p>To populate this bus, the state required a massive human sensor: <strong>The Census</strong>. Administered by the Office of the Censor, this was a periodic biopolitical scan. It transduced the biological reality of millions of inhabitants into a centralized registry. Every body was indexed as a unit of labor, a source of tax, or a potential kinetic weapon. The census was the "Read" operation; the legions and the grain dole were the "Write" operations. The Empire was a machine that used the road network to synchronize its biopolitical ledger with its territorial hardware.</p>
+
+        <div class="receipt-box">
+            <h4>Forensic Receipt: The Continental Bus</h4>
+            <strong>INPUT:</strong> Biopolitical Census Data (Human Units)<br>
+            <strong>TRANSDUCER:</strong> The Office of the Censor (Tabular Registries)<br>
+            <strong>HARDWARE BUS:</strong> The Roman Road Network (Latency Reduction)<br>
+            <strong>FEEDBACK LOOP:</strong> Legionary Deployment / Grain Dole (Territorial Stability)
+        </div>
     </section>
 
 </div>
