@@ -3,138 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE ARCHITECTURE OF THE STEERSMAN | Master Ledger</title>
+    <title>KNOWLEDGE TO POWER | Master Forensic Ledger</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0d0d0d; --surface: #161616; --border: #333333;
-            --text-main: #c4c4c4; --text-bright: #ffffff; --text-dim: #777777;
+            --bg: #0a0a0a; --surface: #121212; --border: #222;
+            --text-main: #b0b0b0; --text-bright: #ffffff; --text-dim: #666;
+            --accent: #d4af37; /* Archival Gold */
             --header-font: 'Inter', sans-serif; --body-font: 'Crimson Pro', serif;
         }
-        body { background-color: var(--bg); color: var(--text-main); font-family: var(--body-font); margin: 0; line-height: 1.7; font-size: 1.15rem; }
-        header { border-bottom: 1px solid var(--border); padding: 60px 20px; text-align: center; background-color: var(--surface); }
-        h1 { font-family: var(--header-font); font-size: 2.2rem; font-weight: 700; margin: 0; text-transform: uppercase; letter-spacing: -1px; color: var(--text-bright); }
-        .subtitle { font-family: var(--header-font); font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 5px; margin-top: 15px; }
-        .container { max-width: 950px; margin: 0 auto; padding: 60px 20px; }
-        nav { position: sticky; top: 0; background: var(--surface); border-bottom: 1px solid var(--border); padding: 15px 0; z-index: 100; }
-        .nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
-        .nav-item { text-decoration: none; color: var(--text-dim); font-family: var(--header-font); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-item:hover { color: var(--text-bright); }
-        section { margin-bottom: 150px; border-top: 1px solid var(--border); padding-top: 50px; }
-        h2 { font-family: var(--header-font); font-size: 1.8rem; text-transform: uppercase; color: var(--text-bright); margin-bottom: 10px; }
-        .chapter-title { font-family: var(--header-font); font-size: 1.3rem; font-weight: 700; margin-top: 60px; color: var(--text-bright); text-transform: uppercase; }
-        .metadata { font-family: var(--header-font); font-size: 0.7rem; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; border-left: 2px solid var(--border); padding-left: 15px; }
-        .receipt-box { background-color: var(--surface); border: 1px solid var(--border); padding: 25px; margin: 40px 0; font-family: var(--header-font); font-size: 0.85rem; }
-        .receipt-box h4 { margin-top: 0; text-transform: uppercase; font-size: 0.7rem; color: var(--text-bright); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 15px; }
-        .dropcap { float: left; font-size: 3.5rem; line-height: 1; font-weight: 700; margin-right: 12px; font-family: var(--header-font); color: var(--text-bright); }
-        footer { border-top: 1px solid var(--border); padding: 60px; text-align: center; font-family: var(--header-font); font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 3px; }
-        hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
-        b { color: var(--text-bright); }
+        body { background-color: var(--bg); color: var(--text-main); font-family: var(--body-font); margin: 0; line-height: 1.7; font-size: 1.1rem; scroll-behavior: smooth; }
+        header { border-bottom: 1px solid var(--border); padding: 80px 20px; text-align: center; background-color: #000; }
+        h1 { font-family: var(--header-font); font-size: 2.5rem; font-weight: 700; margin: 0; text-transform: uppercase; letter-spacing: 2px; color: var(--text-bright); }
+        .subtitle { font-family: var(--header-font); font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 6px; margin-top: 15px; }
+        nav { position: sticky; top: 0; background: rgba(18, 18, 18, 0.95); border-bottom: 1px solid var(--border); padding: 15px 0; z-index: 100; backdrop-filter: blur(10px); }
+        .nav-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; text-align: center; max-width: 1000px; margin: 0 auto; }
+        .nav-item { text-decoration: none; color: var(--text-dim); font-family: var(--header-font); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+        .nav-item:hover { color: var(--accent); }
+        .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
+        section { margin-bottom: 150px; padding-top: 50px; border-top: 1px solid var(--border); }
+        h2 { font-family: var(--header-font); font-size: 2rem; text-transform: uppercase; color: var(--text-bright); margin-bottom: 5px; border-left: 4px solid var(--accent); padding-left: 20px; }
+        .volume-subtitle { font-family: var(--header-font); font-size: 0.9rem; color: var(--accent); text-transform: uppercase; margin-bottom: 40px; padding-left: 24px; }
+        .toc { background: #000; padding: 30px; border: 1px solid var(--border); margin: 30px 0; font-family: var(--header-font); font-size: 0.85rem; }
+        .toc h3 { margin-top: 0; font-size: 0.7rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 2px; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; }
+        .toc ul { list-style: none; padding: 0; }
+        .toc li { margin-bottom: 10px; color: var(--text-main); }
+        .chapter-title { font-family: var(--header-font); font-size: 1.4rem; font-weight: 700; margin-top: 80px; color: var(--text-bright); text-transform: uppercase; }
+        .metadata-tag { font-family: var(--header-font); font-size: 0.7rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; display: inline-block; margin-bottom: 15px; }
+        .receipt { background: #111; border: 1px solid var(--border); padding: 25px; margin: 40px 0; font-family: var(--header-font); font-size: 0.9rem; position: relative; }
+        .receipt::before { content: "DATA_RECEIPT"; position: absolute; top: -10px; right: 20px; background: var(--bg); padding: 0 10px; font-size: 0.6rem; color: var(--text-dim); border: 1px solid var(--border); }
+        .dropcap { float: left; font-size: 4rem; line-height: 0.8; font-weight: 700; margin-right: 15px; font-family: var(--header-font); color: var(--accent); }
+        footer { border-top: 1px solid var(--border); padding: 80px; text-align: center; font-family: var(--header-font); font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 3px; }
+        b, strong { color: var(--text-bright); }
+        i { color: var(--accent); }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>The Architecture of the Steersman</h1>
-    <div class="subtitle">5,000-Year Instrumentalization of Sacred Knowledge into Control Systems</div>
+    <h1>KNOWLEDGE TO POWER</h1>
+    <div class="subtitle">The 5,000-Year Instrumentalization of Sacred Knowledge into Control Systems</div>
 </header>
 
 <nav>
-    <div class="container nav-grid">
-        <a href="#vol1" class="nav-item">Book I: Hardware</a>
-        <a href="#vol2" class="nav-item">Book II: Psychology</a>
-        <a href="#vol3" class="nav-item">Book III: Finance</a>
-        <a href="#vol4" class="nav-item">Book IV: Intelligence</a>
+    <div class="nav-grid">
+        <a href="#vol1" class="nav-item">Vol I: Hardware</a>
+        <a href="#vol2" class="nav-item">Vol II: Psychology</a>
+        <a href="#vol3" class="nav-item">Vol III: Finance</a>
+        <a href="#vol4" class="nav-item">Vol IV: Intelligence</a>
+        <a href="#synthesis" class="nav-item">Synthesis</a>
     </div>
 </nav>
 
 <div class="container">
 
-    <!-- BOOK I: THE SOVEREIGN HARDWARE -->
+    <!-- VOLUME I -->
     <section id="vol1">
-        <h2>Book I: The Sovereign Hardware</h2>
-        <span class="metadata">Operational Parameters: Physical Transduction & Latency Reduction</span>
-        <div class="chapter-title">The Logistics of Transduction</div>
-        <p><span class="dropcap">V</span>olume I documents the 5,000-year arc of <b>External Control</b>. From the Nilometer’s capture of river energy to the Roman Road’s continental bus, the Jacobin Reset of time/measurement, the Telegraphic decoupling of thought from matter, and the Hollerith Machine's reduction of humans to data, the lineage culminates in the <b>Smartphone Panopticon</b>. Hardware is "Governance in Concrete," ensuring the state maintains signal dominance over the physical world.</p>
+        <h2>Volume I: Information Architectures</h2>
+        <div class="volume-subtitle">The Logistics of Transduction & External Control</div>
+        
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li>Chapter 1: The Nilometer (3000 BCE, Egypt)</li>
+                <li>Chapter 2: The Persian Royal Road & King's Eye (550 BCE)</li>
+                <li>Chapter 3: The Jacobin Reset (1792 CE)</li>
+                <li>Chapter 4: Telegraphic Decoupling (1837 CE)</li>
+                <li>Chapter 5: The Hollerith Machine (1890 CE)</li>
+                <li>Chapter 6: Dehomag Census (1933-1945)</li>
+                <li>Chapter 7: Smartphone Panopticon (2007 CE)</li>
+            </ul>
+        </div>
+
+        <div class="chapter-title">Introduction: The Acceleration of Control</div>
+        <p><span class="dropcap">T</span>he transition from ancient to modern information systems represents a fundamental transformation in the mechanics of control. From the Nilometer's data monopoly to the Persian communication velocity, we move to the modern era: the industrialization and internalization of control. Information is no longer a tool of power; it is the medium through which power operates.</p>
+
+        <div class="chapter-title">Chapter 1: The Nilometer (3000 BCE)</div>
+        <div class="metadata-tag">SENSOR: HYDROLOGICAL</div>
+        <p>The Nilometer was humanity's earliest systematic <b>quantification of nature</b>. By converting hydrological pressure into a fiscal signal, the priesthood performed the first <b>transduction</b>. Access was a monopoly; priests correlated floods with the heliacal rising of Sirius, claiming divine sanction for the taxation algorithm.</p>
+
+        <div class="chapter-title">Chapter 2: The Persian Royal Road (550 BCE)</div>
+        <div class="metadata-tag">BUS: SPATIO-TEMPORAL</div>
+        <p>Darius I's Royal Road was history's first true <b>information empire</b>. By compressing the temporal gap between center and periphery (nine days vs. ninety), the center attained <b>temporal asymmetry</b>. Preemptive compliance was achieved through uncertainty engineering; the King's Eye might always be watching.</p>
+
+        <div class="chapter-title">Chapter 3: The Jacobin Reset (1792 CE)</div>
+        <div class="metadata-tag">PROTOCOL: EPISTEMIC</div>
+        <p>The Jacobins restructured consciousness through <b>temporal reprogramming</b>. The Revolutionary Calendar and the Metric System were used to obliterate historical references and destroy local knowledge, creating a population dependent on the central state for their very framework of reality.</p>
+
+        <div class="chapter-title">Chapter 4: Telegraphic Decoupling (1837 CE)</div>
+        <div class="metadata-tag">RUPTURE: ONTOLOGICAL</div>
+        <p>In 1837, information was <b>liberated from mass</b>. The telegraph allowed a message to outrun its messenger, creating a dual reality. This capture by information cartels (Reuters/AP) established the template: revolutionary technology → utopian promise → corporate-state capture → normalization as control infrastructure.</p>
+
+        <div class="chapter-title">Chapter 5: The Hollerith Machine (1890 CE)</div>
+        <div class="metadata-tag">LOGIC: MACHINE-READABLE</div>
+        <p>Herman Hollerith solved the 1890 census crisis by making <b>populations machine-readable</b>. Individual identity was reduced to patterns on an 80-column punch card. This was <b>Taylorism applied to humans</b>, enabling governance by statistic and profile.</p>
+
+        <div class="chapter-title">Chapter 6: Dehomag Census (1933-1945)</div>
+        <div class="metadata-tag">OUTPUT: LOGISTICAL ANNIHILATION</div>
+        <p>The Holocaust was, in its administration, a <b>data processing problem</b>. IBM subsidiary Dehomag provided the arsenal to turn identities into target lists. <b>Code 8: Gas Chamber</b> was the sterile output of a bureaucratic system that diffused moral responsibility across data entry.</p>
+
+        <div class="chapter-title">Chapter 7: Smartphone Panopticon (2007 CE)</div>
+        <div class="metadata-tag">TERMINAL: SELF-SURVEILLANCE</div>
+        <p>The smartphone is a sensor suite for capturing human existence. Through <b>Surveillance Capitalism</b>, behavioral surplus is extracted to build prediction products. The subject now willingly buys and maintains the instrument of their own transparency—the <b>perfected Panopticon</b>.</p>
+
+        <div class="receipt">
+            <b>Sovereign Summary (Vol I):</b> The arc has moved from Measuring Floods (Egypt) to Measuring Souls (Smartphone). Control moves from External (Nature) to Internal (Self).
+        </div>
     </section>
 
-    <!-- BOOK II: THE PSYCHOLOGICAL ENCLOSURE -->
+    <!-- VOLUME II -->
     <section id="vol2">
-        <h2>Book II: The Psychological Enclosure</h2>
-        <span class="metadata">Operational Parameters: Cognitive Modulation & Identity Reconstruction</span>
-        <div class="chapter-title">The Engineering of the Internalized Governor</div>
-        <p><span class="dropcap">I</span>f Book I is the Body, Book II is the Brain. This volume traces the transition from <b>Ancient Initiation Systems</b> (Egypt, Pythagoras, Plato, Druids) to <b>Modern Psycho-Technologies</b> (Hermeticism, Freemasonry, Macy Cybernetics, and RLHF). The goal is the scientific re-engineering of the human subject—moving from conscious ritual to ambient, algorithmic conditioning—ensuring the subject serves as their own warden within the digital temple.</p>
+        <h2>Volume II: Initiation Systems</h2>
+        <div class="volume-subtitle">The Technology of Human Reconstruction</div>
+        
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li>Chapter 1: Egyptian Mystery Schools (3000 BCE)</li>
+                <li>Chapter 2: Pythagoras and Plato (570-387 BCE)</li>
+                <li>Chapter 3: The Druid Guild (500 BCE)</li>
+                <li>Chapter 4: Hermetic Revival & Medici Synthesis (1460 CE)</li>
+                <li>Chapter 5: Freemasonry & American OS (1776 CE)</li>
+                <li>Chapter 6: Macy Conferences: Cybernetic Control (1946 CE)</li>
+                <li>Chapter 7: Mimetic Stack: RLHF (2026 CE)</li>
+            </ul>
+        </div>
+
+        <div class="chapter-title">Introduction: The Re-Engineering of the Human</div>
+        <p><span class="dropcap">V</span>olume II explores the internal engineering of the human being. These systems function as technologies of control, using ritualized ordeal and graduated revelation to reconstruct identity. The goal: to produce a predictable, aligned human output through <b>Identity Dissolution and Programmed Reconstruction</b>.</p>
+
+        <div class="chapter-title">Chapter 1: Egyptian Mystery Schools</div>
+        <p>The Egyptian temple was a precision instrument for <b>consciousness alteration</b>. Through sacred geometry, acoustics, and sensory deprivation, initiates were "reborn" into a new identity. The internalization of <b>Ma'at</b> ensured pharaonic order was synonymous with the order of the universe.</p>
+
+        <div class="chapter-title">Chapter 4: Hermetic Revival & Medici Synthesis</div>
+        <p>The 1460 rediscovery of the <i>Corpus Hermeticum</i> offered the Medici a <b>manual for self-divinization</b>. By controlling these platforms of transformation, the Medici fused financial capital with symbolic capital. Efficacy replaced authenticity; the system worked regardless of its ancient pedigree.</p>
+
+        <div class="chapter-title">Chapter 6: Macy Conferences: Cybernetic Control</div>
+        <p>Following WWII, human nature was reframed as a <b>systems problem</b>. The Macy Conferences (Wiener, Mead, von Neumann) birthed <b>Cybernetics</b>. The human was reconceived as a <b>servomechanism</b>—a programmable entity steered by the manipulation of its informational feedback loop.</p>
+
+        <div class="chapter-title">Chapter 7: Mimetic Stack: RLHF (2026 CE)</div>
+        <p><b>Reinforcement Learning from Human Feedback (RLHF)</b> is the terminal stage of initiation. It uses mediated consensus to shape the <b>Latent Space</b> of both AI and humans. We imitate the AI, which imitated an aggregate of us. The initiation is no longer a ritual; it is the <b>environment we breathe</b>.</p>
+
+        <div class="receipt">
+            <b>Sovereign Summary (Vol II):</b> Initiation has moved from the conscious ritual of the few to the ambient conditioning of the species. <b>There is no graduation.</b>
+        </div>
     </section>
 
-    <!-- BOOK III: THE FINANCIAL RUDDER -->
+    <!-- VOLUME III -->
     <section id="vol3">
-        <h2>Book III: The Financial Rudder</h2>
-        <span class="metadata">Operational Parameters: Abstract Value Alchemy & Debt Monetization</span>
-
-        <div class="toc" style="background: #111; padding: 20px; border: 1px solid #333; margin: 20px 0; font-size: 0.8rem; font-family: var(--header-font);">
-            <h3 style="margin-top:0; font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase;">Table of Contents: Volume III</h3>
-            <ul style="list-style: none; padding: 0;">
+        <h2>Volume III: Financial Sorcery</h2>
+        <div class="volume-subtitle">The Alchemy of Abstract Value</div>
+        
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
                 <li>Chapter 1: The Grain Loan (3000 BCE)</li>
                 <li>Chapter 2: Templar Banking (1150 CE)</li>
                 <li>Chapter 3: The VOC Share (1602 CE)</li>
                 <li>Chapter 4: The Bank of England (1694 CE)</li>
                 <li>Chapter 5: The Federal Reserve (1913 CE)</li>
-                <li>Chapter 6: The Black-Scholes Equation (1973 CE)</li>
+                <li>Chapter 6: Black-Scholes Risk Alchemy (1973 CE)</li>
                 <li>Chapter 7: The Recursive Crash (2008 CE)</li>
-                <li>Chapter 8: Bitcoin & CBDCs (2009-2025 CE)</li>
+                <li>Chapter 8: Bitcoin & CBDCs (2009-2025)</li>
             </ul>
         </div>
 
-        <div class="intro-box" style="font-style: italic; margin-bottom: 40px;">
-            "Capital is the Systemic Delta. This volume traces the terminal phase of financial abstraction, where money dematerializes into pure information. Control over the code of money constitutes ultimate power, completing the arc from temple granaries to programmable digital ledgers."
-        </div>
+        <div class="chapter-title">Introduction: Money as Fiction</div>
+        <p><span class="dropcap">M</span>oney is a belief system materialized into control technology. This volume traces the abstraction ladder: real goods (grain) → precious metals → paper claims → expectations → pure debt. As money dematerialized, its power to command society materialized.</p>
 
         <div class="chapter-title">Chapter 5: The Federal Reserve (1913 CE)</div>
-        <p><span class="dropcap">I</span>n November 1910, an estimated one-quarter of the world’s wealth met in secret on <b>Jekyll Island</b> to draft the blueprint for the American central bank. The participants—Aldrich, Warburg, and representatives of the Morgan and Rockefeller interests—institutionalized crisis management while disguising centralized control. The Fed's core power is <b>Privatized Money Creation</b>. By purchasing government debt with digital dollars created ex nihilo, the Fed ensures the money supply is literally born as debt. The system mandates perpetual debt expansion, making the invisible government by the Monetary Power a legal reality.</p>
+        <p>The 1910 Jekyll Island meeting institutionalized <b>privatized money creation</b>. The Fed creates dollars <i>ex nihilo</i> to buy government debt. Money is born as debt; the system mandates perpetual expansion. The "Invisible Government" by the Monetary Power was legalized in 1913.</p>
 
-        <div class="chapter-title">Chapter 6: The Black-Scholes Equation (1973 CE)</div>
-        <p>The 1973 Black-Scholes model provided the mathematical engine for the derivatives explosion. It was <b>Financial Alchemy</b>: using symbolic language (stochastic calculus) to synthesize risklessness from risky elements. Once adopted, the formula became <b>Performative</b>; it did not describe reality, it created it. This birthed a priesthood of "Quants" who manage an occult derivatives universe now valued at over <b>$1 quadrillion</b>. The 1998 collapse of LTCM proved the model's frailty: the formula failed because reality refused to obey its Platonic assumptions.</p>
-
-        <div class="receipt-box">
-            <h4>Forensic Receipt: Risk Alchemy</h4>
-            <b>INPUT:</b> Volatility & Time // <b>TRANSDUCER:</b> Black-Scholes Equation<br>
-            <b>LOGIC:</b> Dynamic Delta Hedging // <b>OUTPUT:</b> $1 Quadrillion Synthetic Universe
-        </div>
-
-        <div class="chapter-title">Chapter 7: The Recursive Crash (2008 CE)</div>
-        <p>The 2008 crisis was built on a <b>Recursive Pyramid of Abstraction</b>: mortgages bundled into MBS, tranched into CDOs, and insured by CDS. Complexity became the primary control technology, enabling <b>Plausible Deniability</b> and the diffusion of accountability. When the models broke, the response was a modern sacrificial rite: the socialization of losses via <b>Quantitative Easing</b>. The meta-lesson was established: finance is the meta-control layer of global society, where sovereign nations are disciplined by bond spreads and money commands humanity.</p>
-
-        <div class="chapter-title">Chapter 8: Bitcoin & CBDCs (2009-2025 CE)</div>
-        <p>Bitcoin emerged from the 2008 crash as a peer-to-peer challenge to central banking, yet its blockchain constitutes a <b>Digital Panopticon</b>—a public ledger where every transaction is recorded forever. This has facilitated the transition to <b>Central Bank Digital Currencies (CBDCs)</b>. The endgame is <b>Programmable Money</b>: currency with expiration dates, spending restrictions, and social credit integration. The convergence of Bitcoin and CBDCs marks the terminal stage of financial sorcery: value as pure information, and <b>Financial Excommunication</b> as the ultimate sanction of the Steersman.</p>
-
-        <div class="receipt-box">
-            <h4>Forensic Receipt: The Abstraction Sequence</h4>
-            <b>SUMER:</b> Time becomes Debt // <b>VOC:</b> Expectation becomes Tradeable<br>
-            <b>FED:</b> Debt becomes Money // <b>CBDC:</b> Money becomes Code
-        </div>
-
-        <hr>
-        <h4>Sovereign Verdict: Volume III Synthesis</h4>
-        <p>Each step in the financial lineage dematerializes value: <b>Physical Goods → Metal → Paper → Ledger → Code</b>. As money loses its physical referent, its controllability increases. Sovereignty now resides in the hands of those who control the database and write the code. Financial surveillance is the most potent form of dominion; the ledger sees all and governs all.</p>
-    </section>
-
-    <!-- BOOK IV: THE INTELLIGENCE NERVOUS SYSTEM -->
-    <section id="vol4">
-        <h2>Book IV: The Intelligence Nervous System</h2>
-        <p>Awaiting integration of Signal Dominance & Latency Ownership research...</p>
-    </section>
-
-    <section id="manuals">
-        <h2>Shadow Bibliography</h2>
-        <div class="receipt-box" style="line-height: 1.5;">
-            <b>Finance:</b> <i>The Creature from Jekyll Island</i> (Griffin), <i>An Engine, Not a Camera</i> (MacKenzie), <i>The Big Short</i> (Michael Lewis).<br>
-            <b>Cryptoeconomics:</b> <i>The Bitcoin Standard</i> (Ammous), <i>The Age of Surveillance Capitalism</i> (Zuboff).
-        </div>
-    </section>
-</div>
-
-<footer>
-    SOVEREIGN INTELLIGENCE BRIEFING // CASE: ARCHITECTURE-STEERSMAN // BY V.K. ELARA
-</footer>
-</body>
-</html>
+        <div class="chapter-title">Chapter 8: Bitcoin & CBDCs (2009-2025)</div>
+        <p>Bitcoin and <b>Central Bank Digital Currencies (CBDCs)</b> converge on the elimination of cash. CBDCs introduce <b>Programmable Money</b>: currency with expiration dates, spending restrictions, and social credit integration. Control moves to the code itself
