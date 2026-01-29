@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ARCHITECTURE OF THE STEERSMAN | Forensic Audit</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a; --surface: #121212; --border: #333; --accent: #00ff41;
+            --text-main: #d1d1d1; --text-dim: #777; --header-font: 'Inter', sans-serif; --mono-font: 'JetBrains Mono', monospace;
+        }
+        body { background-color: var(--bg); color: var(--text-main); font-family: var(--header-font); margin: 0; line-height: 1.6; overflow-x: hidden; }
+        header { border-bottom: 1px solid var(--border); padding: 60px 20px; text-align: center; background: linear-gradient(to bottom, #111, #0a0a0a); }
+        h1 { font-family: var(--mono-font); font-size: 2.5rem; letter-spacing: -1px; color: var(--accent); margin: 0; text-transform: uppercase; }
+        .subtitle { font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 6px; margin-top: 15px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 80px; }
+        .nav-item { border: 1px solid var(--border); padding: 15px; text-align: center; font-family: var(--mono-font); font-size: 0.8rem; cursor: pointer; transition: all 0.3s; text-decoration: none; color: var(--text-dim); }
+        .nav-item:hover { border-color: var(--accent); color: var(--accent); background: rgba(0, 255, 65, 0.05); }
+        section { margin-bottom: 120px; border-left: 2px solid var(--border); padding-left: 40px; position: relative; }
+        section::before { content: ""; position: absolute; left: -6px; top: 0; width: 10px; height: 10px; background: var(--accent); }
+        h2 { font-family: var(--mono-font); font-size: 1.8rem; color: #fff; margin-bottom: 10px; text-transform: uppercase; }
+        .thesis { font-style: italic; color: var(--accent); margin-bottom: 40px; font-size: 1.2rem; border-bottom: 1px solid #222; padding-bottom: 20px; }
+        .lineage-table { width: 100%; border-collapse: collapse; margin-top: 30px; font-family: var(--mono-font); font-size: 0.9rem; }
+        .lineage-table th, .lineage-table td { border: 1px solid var(--border); padding: 20px; text-align: left; vertical-align: top; }
+        .lineage-table th { background-color: var(--surface); color: var(--text-dim); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
+        .node-title { color: #fff; font-weight: bold; display: block; margin-bottom: 10px; font-size: 1.1rem; text-transform: uppercase; }
+        .shadow-manuals { margin-top: 40px; background: var(--surface); padding: 30px; border: 1px dashed var(--border); }
+        .shadow-manuals h4 { margin-top: 0; color: var(--accent); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 20px; }
+        .manual-item { margin-bottom: 15px; }
+        .manual-name { color: #fff; font-weight: bold; }
+        .convergence { background: #1a1a1a; border: 1px solid var(--accent); padding: 60px 40px; text-align: center; margin-top: 60px; }
+        .convergence h2 { color: var(--accent); margin-bottom: 20px; }
+        footer { border-top: 1px solid var(--border); padding: 60px; text-align: center; font-family: var(--mono-font); font-size: 0.75rem; color: var(--text-dim); letter-spacing: 2px; }
+        .tag { background: #222; padding: 4px 8px; border-radius: 3px; font-size: 0.7rem; margin-bottom: 10px; display: inline-block; color: var(--accent); border: 1px solid #333; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>The Architecture of the Steersman</h1>
+    <div class="subtitle">A 5,000-Year Genealogy of the Control State</div>
+</header>
+<div class="container">
+    <div class="nav-grid">
+        <a href="#vol1" class="nav-item">VOL I: HARDWARE</a>
+        <a href="#vol2" class="nav-item">VOL II: PSYCHOLOGY</a>
+        <a href="#vol3" class="nav-item">VOL III: FINANCE</a>
+        <a href="#vol4" class="nav-item">VOL IV: INTELLIGENCE</a>
+    </div>
+    <section id="vol1">
+        <h2>VOLUME I: THE SOVEREIGN HARDWARE</h2>
+        <div class="thesis">Power begins with the physical capture of the variable. Hardware is "Governance in Concrete."</div>
+        <table class="lineage-table">
+            <thead><tr><th style="width: 25%;">Era / Node</th><th>Mechanism & Transduction Logic</th></tr></thead>
+            <tbody>
+                <tr><td><span class="tag">3000 BCE</span><br>Hydraulic Sensor</td><td><span class="node-title">The Nilometer</span>Transcription of river-energy into tax-stelae.</td></tr>
+                <tr><td><span class="tag">1837 CE</span><br>Decoupled Signal</td><td><span class="node-title">Electric Telegraph</span>The collapse of physical latency.</td></tr>
+                <tr><td><span class="tag">2026 CE</span><br>Tactical Edge</td><td><span class="node-title">H100 / Scale Donovan</span>Zero-latency tactical sovereignty.</td></tr>
+            </tbody>
+        </table>
+        <div class="shadow-manuals">
+            <h4>Shadow Manuals: Volume I</h4>
+            <div class="manual-item"><span class="manual-name">The Power Broker (Robert Caro):</span> Infrastructure as social decree.</div>
+        </div>
+    </section>
+    <section id="vol2">
+        <h2>VOLUME II: THE PSYCHOLOGICAL ENCLOSURE</h2>
+        <div class="thesis">The most efficient control is internalized. The subject must be programmed to correct their own deviation.</div>
+        <table class="lineage-table">
+            <thead><tr><th style="width: 25%;">Era / Node</th><th>Cognitive Modulation Logic</th></tr></thead>
+            <tbody>
+                <tr><td><span class="tag">1215 CE</span><br>Mandatory Audit</td><td><span class="node-title">The Confessional</span>First state-mandated psychological data-input interface.</td></tr>
+                <tr><td><span class="tag">2026 CE</span><br>Mimetic Stack</td><td><span class="node-title">Project Archetype</span>Automated alignment of the global "Latent Space" via RLHF.</td></tr>
+            </tbody>
+        </table>
+        <div class="shadow-manuals">
+            <h4>Shadow Manuals: Volume II</h4>
+            <div class="manual-item"><span class="manual-name">Propaganda (Edward Bernays):</span> The manual for engineering consent.</div>
+        </div>
+    </section>
+    <div class="convergence">
+        <h2>2026 CONVERGENCE: THE AUTONOMIC LEVIATHAN</h2>
+        <p style="font-family: var(--mono-font); font-size: 0.9rem; color: #fff;">
+            VERTICAL INTEGRATION STATUS: <span style="color: var(--accent);">COMPLETE</span><br><br>
+            [HARDWARE: H100] + [PSYCHOLOGY: RLHF] + [FINANCE: ENERGY] + [INTEL: AGENTIC AI]
+        </p>
+    </div>
+</div>
+<footer>
+    SOVEREIGN INTELLIGENCE BRIEFING // CASE: ARCHITECTURE-STEERSMAN // 5,000-YEAR FORENSIC AUDIT // BY V.K. ELARA
+</footer>
+</body>
+</html>
